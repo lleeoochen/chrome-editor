@@ -1,4 +1,4 @@
-define("ace/theme/tomorrow_night_eighties",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/tomorrow_night_eighties",[], function(require, exports, module) {
 
 exports.isDark = true;
 exports.cssClass = "ace-tomorrow-night-eighties";
@@ -107,7 +107,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/tomorrow_night_eighties"], function(m) {
+                    ace.require(["ace/theme/tomorrow_night_eighties"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

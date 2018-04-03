@@ -1,4 +1,4 @@
-define("ace/theme/eclipse",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/eclipse",[], function(require, exports, module) {
 "use strict";
 
 exports.isDark = false;
@@ -97,7 +97,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/eclipse"], function(m) {
+                    ace.require(["ace/theme/eclipse"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

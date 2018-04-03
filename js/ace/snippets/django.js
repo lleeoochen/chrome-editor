@@ -1,4 +1,4 @@
-define("ace/snippets/django",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/snippets/django",[], function(require, exports, module) {
 "use strict";
 
 exports.snippetText = "# Model Fields\n\
@@ -114,7 +114,7 @@ exports.scope = "django";
 
 });
                 (function() {
-                    window.require(["ace/snippets/django"], function(m) {
+                    ace.require(["ace/snippets/django"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

@@ -1,4 +1,4 @@
-define("ace/snippets/lsl",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/snippets/lsl",[], function(require, exports, module) {
 "use strict";
 
 exports.snippetText = "snippet @\n\
@@ -1238,7 +1238,7 @@ exports.scope = "lsl";
 
 });
                 (function() {
-                    window.require(["ace/snippets/lsl"], function(m) {
+                    ace.require(["ace/snippets/lsl"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

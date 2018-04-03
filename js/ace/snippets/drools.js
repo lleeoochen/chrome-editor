@@ -1,4 +1,4 @@
-define("ace/snippets/drools",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/snippets/drools",[], function(require, exports, module) {
 "use strict";
 
 exports.snippetText = "\n\
@@ -25,7 +25,7 @@ exports.scope = "drools";
 
 });
                 (function() {
-                    window.require(["ace/snippets/drools"], function(m) {
+                    ace.require(["ace/snippets/drools"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

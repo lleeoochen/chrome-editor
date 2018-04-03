@@ -1,4 +1,4 @@
-define("ace/theme/solarized_dark",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/solarized_dark",[], function(require, exports, module) {
 
 exports.isDark = true;
 exports.cssClass = "ace-solarized-dark";
@@ -87,7 +87,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/solarized_dark"], function(m) {
+                    ace.require(["ace/theme/solarized_dark"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

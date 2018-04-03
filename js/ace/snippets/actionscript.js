@@ -1,4 +1,4 @@
-define("ace/snippets/actionscript",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/snippets/actionscript",[], function(require, exports, module) {
 "use strict";
 
 exports.snippetText = "snippet main\n\
@@ -163,7 +163,7 @@ exports.scope = "actionscript";
 
 });
                 (function() {
-                    window.require(["ace/snippets/actionscript"], function(m) {
+                    ace.require(["ace/snippets/actionscript"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

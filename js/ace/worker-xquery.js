@@ -217,7 +217,7 @@ window.onmessage = function(e) {
 };
 })(this);
 
-define("ace/lib/oop",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/lib/oop",[], function(require, exports, module) {
 "use strict";
 
 exports.inherits = function(ctor, superCtor) {
@@ -245,7 +245,7 @@ exports.implement = function(proto, mixin) {
 
 });
 
-define("ace/range",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/range",[], function(require, exports, module) {
 "use strict";
 var comparePoints = function(p1, p2) {
     return p1.row - p2.row || p1.column - p2.column;
@@ -484,7 +484,7 @@ Range.comparePoints = function(p1, p2) {
 exports.Range = Range;
 });
 
-define("ace/apply_delta",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/apply_delta",[], function(require, exports, module) {
 "use strict";
 
 function throwDeltaError(delta, errorText){
@@ -548,7 +548,7 @@ exports.applyDelta = function(docLines, delta, doNotValidate) {
 };
 });
 
-define("ace/lib/event_emitter",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/lib/event_emitter",[], function(require, exports, module) {
 "use strict";
 
 var EventEmitter = {};
@@ -674,7 +674,7 @@ exports.EventEmitter = EventEmitter;
 
 });
 
-define("ace/anchor",["require","exports","module","ace/lib/oop","ace/lib/event_emitter"], function(require, exports, module) {
+ace.define("ace/anchor",[], function(require, exports, module) {
 "use strict";
 
 var oop = require("./lib/oop");
@@ -798,7 +798,7 @@ var Anchor = exports.Anchor = function(doc, row, column) {
 
 });
 
-define("ace/document",["require","exports","module","ace/lib/oop","ace/apply_delta","ace/lib/event_emitter","ace/range","ace/anchor"], function(require, exports, module) {
+ace.define("ace/document",[], function(require, exports, module) {
 "use strict";
 
 var oop = require("./lib/oop");
@@ -1153,7 +1153,7 @@ var Document = function(textOrLines) {
 exports.Document = Document;
 });
 
-define("ace/lib/lang",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/lib/lang",[], function(require, exports, module) {
 "use strict";
 
 exports.last = function(a) {
@@ -1341,7 +1341,7 @@ exports.delayedCall = function(fcn, defaultTimeout) {
 };
 });
 
-define("ace/worker/mirror",["require","exports","module","ace/range","ace/document","ace/lib/lang"], function(require, exports, module) {
+ace.define("ace/worker/mirror",[], function(require, exports, module) {
 "use strict";
 
 var Range = require("../range").Range;
@@ -1403,7 +1403,7 @@ var Mirror = exports.Mirror = function(sender) {
 
 });
 
-define("ace/mode/xquery/xqlint",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/mode/xquery/xqlint",[], function(require, exports, module) {
 module.exports = (function outer (modules, cache, entry) {
     var previousRequire = typeof require == "function" && require;
     function newRequire(name, jumped){
@@ -69868,7 +69868,7 @@ exports.XQLint = function (source, opts) {
   var _ = runInContext();
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
     root._ = _;
-    define(function() {
+    ace.define(function() {
       return _;
     });
   }
@@ -69890,7 +69890,7 @@ exports.XQLint = function (source, opts) {
 
 });
 
-define("ace/mode/xquery_worker",["require","exports","module","ace/lib/oop","ace/worker/mirror","ace/mode/xquery/xqlint"], function(require, exports, module) {
+ace.define("ace/mode/xquery_worker",[], function(require, exports, module) {
 "use strict";
     
 var oop = require("../lib/oop");
@@ -69975,7 +69975,7 @@ oop.inherits(XQueryWorker, Mirror);
 
 });
 
-define("ace/lib/es5-shim",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/lib/es5-shim",[], function(require, exports, module) {
 
 //
 //

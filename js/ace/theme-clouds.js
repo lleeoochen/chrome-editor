@@ -1,4 +1,4 @@
-define("ace/theme/clouds",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/clouds",[], function(require, exports, module) {
 
 exports.isDark = false;
 exports.cssClass = "ace-clouds";
@@ -94,7 +94,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/clouds"], function(m) {
+                    ace.require(["ace/theme/clouds"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

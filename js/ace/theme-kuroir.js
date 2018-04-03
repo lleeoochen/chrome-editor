@@ -1,4 +1,4 @@
-define("ace/theme/kuroir",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/kuroir",[], function(require, exports, module) {
 
 exports.isDark = false;
 exports.cssClass = "ace-kuroir";
@@ -60,7 +60,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/kuroir"], function(m) {
+                    ace.require(["ace/theme/kuroir"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

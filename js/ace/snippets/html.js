@@ -1,4 +1,4 @@
-define("ace/snippets/html",["require","exports","module"], function(require, exports, module) {
+ace.define("ace/snippets/html",[], function(require, exports, module) {
 "use strict";
 
 exports.snippetText = "# Some useful Unicode entities\n\
@@ -861,7 +861,7 @@ exports.scope = "html";
 
 });
                 (function() {
-                    window.require(["ace/snippets/html"], function(m) {
+                    ace.require(["ace/snippets/html"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }

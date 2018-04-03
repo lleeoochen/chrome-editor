@@ -1,4 +1,4 @@
-define("ace/theme/clouds_midnight",["require","exports","module","ace/lib/dom"], function(require, exports, module) {
+ace.define("ace/theme/clouds_midnight",[], function(require, exports, module) {
 
 exports.isDark = true;
 exports.cssClass = "ace-clouds-midnight";
@@ -95,7 +95,7 @@ var dom = require("../lib/dom");
 dom.importCssString(exports.cssText, exports.cssClass);
 });
                 (function() {
-                    window.require(["ace/theme/clouds_midnight"], function(m) {
+                    ace.require(["ace/theme/clouds_midnight"], function(m) {
                         if (typeof module == "object" && typeof exports == "object" && module) {
                             module.exports = m;
                         }
