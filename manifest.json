@@ -23,5 +23,9 @@
         "tabs",
         "storage",
         "background"
-    ]
+    ],
+    "browser_action": {
+        "default_title": "Chrome Editor",
+        "default_icon": "assets/pencil-128.png"
+    }
 }
