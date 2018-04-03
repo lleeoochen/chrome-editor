@@ -29,7 +29,7 @@ if (address.includes(FILE_LINK)) {
 	else {
 		var text = document.getElementsByTagName('pre')[0].innerHTML;
 		var file = address.substring(address.lastIndexOf('/') + 1);
-		var filepath = address.substring(FILE_LINK.length, address.lastIndexOf('/') + 1).decodeHTML;
+		var filepath = address.substring(FILE_LINK.length, address.lastIndexOf('/') + 1);
 
 		//Store text file info and tell background script to open extension editor
 		chrome.storage.local.set({"user_text":text, "user_file":file, "user_path":filepath}, function() {
@@ -47,6 +47,7 @@ if (address.includes(EXTENSION_LINK)) {
 	var editor = ace.edit("editor");
 	var modelist = ace.require("ace/ext/modelist");
 	var title = null;
+	var fpath = null;
 	var mode = null;
 	editor.setTheme("ace/theme/chrome");
 	editor.setFontSize(14);
@@ -54,6 +55,7 @@ if (address.includes(EXTENSION_LINK)) {
 	//Retreive text file info and modify text editor accordingly
 	chrome.storage.local.get(["user_text", "user_file", "user_path"], function(items) {
 		title = items.user_file;
+		fpath = items.user_path;
 		mode = modelist.getModeForPath(title).mode;
 		editor.session.setMode(mode);
 		editor.setValue(items.user_text + "\n", -1);
@@ -65,11 +67,15 @@ if (address.includes(EXTENSION_LINK)) {
 	    if (event.ctrlKey && event.keyCode == 83) {
 		    event.preventDefault();
 
+		    //Prompt to copy file path
+		    prompt("Copy and paste to save to the same location.\n", fpath + title);
+
 		    //Export important contents
 		    var link = document.createElement('a');
 		    link.setAttribute('download', title);
 		    link.setAttribute('href', 'data:text/plain; charset=utf-8,' + encodeURIComponent(editor.getValue()));
 		    link.click();
+
 		    return false;
 		}
 		return true;
