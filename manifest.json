@@ -1,7 +1,8 @@
 {
-	"manifest_version": 2,
     "name": "Chrome Editor",
     "description": "Edit local files easily through this Chrome extension.",
+    "author": "Wei Tung Chen",
+    "manifest_version": 2,
     "version": "1.0",
     "icons": {
         "16":"assets/pencil-16.png",
@@ -11,22 +12,16 @@
     "content_scripts": [
         {
             "matches": ["file://*"],
-            "js": ["content.js"],
+            "js": ["js/chrome-editor.js"],
             "run_at": "document_end"
         }
     ],
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["js/background.js"]
     },
     "permissions":[
         "tabs",
-        "fileSystem",
-        "background",
-        "bookmarks",
-        "file://*"
-    ],
-    "browser_action": {
-        "default_title": "Chrome Editor",
-        "default_icon": "assets/pencil-128.png"
-    }
+        "storage",
+        "background"
+    ]
 }
