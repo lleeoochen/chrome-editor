@@ -80,4 +80,9 @@ if (address.includes(EXTENSION_LINK)) {
 		}
 		return true;
 	};
+
+	//Save everything before exiting
+	window.onbeforeunload = function(event) {
+		chrome.storage.local.set({"user_text":editor.getValue(), "user_file":title, "user_path":fpath}, function(){});
+	};
 }
