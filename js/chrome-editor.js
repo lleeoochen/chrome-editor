@@ -64,19 +64,21 @@ if (address.includes(EXTENSION_LINK)) {
 
 	//Overwrite control save event
 	document.onkeydown = function(event) {
-	    if (event.ctrlKey && event.keyCode == 83) {
-		    event.preventDefault();
+		if (event.ctrlKey && event.keyCode == 83) {
+			event.preventDefault();
 
-		    //Prompt to copy file path
-		    prompt("Copy and paste to save to the same location.\n", fpath + title);
+			//Prompt to copy file path
+			var okay = prompt("Copy and paste to save to the same location.\n", fpath + title);
 
-		    //Export important contents
-		    var link = document.createElement('a');
-		    link.setAttribute('download', title);
-		    link.setAttribute('href', 'data:text/plain; charset=utf-8,' + encodeURIComponent(editor.getValue()));
-		    link.click();
+			//Export important contents
+			if (okay != null) {
+				var link = document.createElement('a');
+				link.setAttribute('download', title);
+				link.setAttribute('href', 'data:text/plain; charset=utf-8,' + encodeURIComponent(editor.getValue()));
+				link.click();
+			}
 
-		    return false;
+			return false;
 		}
 		return true;
 	};
