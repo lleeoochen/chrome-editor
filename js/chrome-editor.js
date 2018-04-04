@@ -27,7 +27,7 @@ if (address.includes(FILE_LINK)) {
 
 	//Otherwise, convert text file to our chrome extension editor
 	else {
-		var text = document.getElementsByTagName('pre')[0].innerHTML;
+		var text = document.getElementsByTagName('pre')[0].innerText;
 		var file = address.substring(address.lastIndexOf('/') + 1);
 		var filepath = address.substring(FILE_LINK.length, address.lastIndexOf('/') + 1);
 
