@@ -22,7 +22,7 @@ function main() {
 			modify_folder();
 
 		//Otherwise, convert text file to our chrome extension editor if wanted
-		else if (confirm('Chrome Editor: Do you want to edit this HTML file?'))
+		else if (confirm('Chrome Editor: Do you want to edit this file?'))
 			modify_file();
 	}
 
