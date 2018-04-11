@@ -6,6 +6,7 @@
 
 //Useful constants of pages
 var FILE_LINK = "file://";
+var PDF_EXTENSION = ".pdf";
 var EXTENSION_LINK = chrome.extension.getURL("chrome-editor.html");
 var address = unescape(window.location.href);
 main();
@@ -22,7 +23,7 @@ function main() {
 			modify_folder();
 
 		//Otherwise, convert text file to our chrome extension editor if wanted
-		else if (confirm('Chrome Editor: Do you want to edit this file?'))
+		else if (!address.includes(PDF_EXTENSION) && confirm('Chrome Editor: Do you want to edit this file?'))
 			modify_file();
 	}
 
